@@ -1,3 +1,20 @@
+var $form = $('.validate-form'),
+    url = 'https://script.google.com/macros/s/AKfycbx4Mh3H1IcPAEBxTCzpgl02qiU_9RgoEYPh82DwMC6a2MaN0RG5/exec'
+
+var $button = document.getElementById("submit-form");
+
+    $button.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log("hello")
+      var jqxhr = $.ajax({
+       url: url,
+       method: "GET",
+       dataType: "json",
+       data: $form.serializeObject()
+      }).success(
+    // do something
+  );
+})
 
 (function ($) {
     "use strict";
